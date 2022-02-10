@@ -1,0 +1,51 @@
+<app-header></app-header>
+<div class="container" style="min-height: 400px;">
+    <div class="row">
+        <div class="row justify-content-between m-1">
+            <p class="col-sm-4">USUARIO: {{usuario}}</p>
+            <button  class="col-sm-2 btn btn-primary" (click)="logout()">Cerrar Sesión</button>
+        </div>
+    </div>
+    <div class="row text-center mt-3">
+        <h3> Alta de Comité o Comisión Vigente</h3>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="row mt-3 justify-content-center form-group">
+                <label class="col-sm-3 text-justify" for="">Nombre del Comité o Comisión:</label>
+                <div class="col-sm-4">
+                    <input class="form-control" type="text" placeholder="Nombre...">
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-center form-group">
+                <label class="col-sm-3 text-justify" for="">Acrónimo:</label>
+                <div class="col-sm-4">
+                    <input class="form-control" type="text" placeholder="Acrónimo...">
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-center form-group">
+                <label class="col-sm-3 text-justify" for="">Asesora o Asesor a cargo:</label>
+                <div class="col-sm-4">
+                    <input class="form-control" type="text" placeholder="Asesor/Asesora...">
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-center form-group">
+                <label class="col-sm-3 text-justify" for="">Persona Consejera que lo preside:</label>
+                <div class="col-sm-4">
+                    <input class="form-control" type="text" placeholder="Consejero/Consejera...">
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-center form-group">
+                <label class="col-sm-3 text-justify" for="">Secretaria Técnica o Secretario Técnico del Comité o Comisión:</label>
+                <div class="col-sm-4">
+                    <input class="form-control" type="text" placeholder="Secretario/Secretaria...">
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-end">
+                <button class=" col-sm-1 btn btn-primary me-5" (click)="guardarComision()">Guardar</button>
+                <button class=" col-sm-1 btn btn-primary" (click)="router.navigate(['/alta']);">Regresar</button>
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

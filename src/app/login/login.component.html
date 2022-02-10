@@ -1,0 +1,47 @@
+<header>
+    <div class="row p-3 text-center" style="background-color: #7030A0; color: white">
+        <h3 style="font-size: 25px;">SISTEMA PARA EL SEGUIMIENTO A LAS SESIONES DE <br> COMITÉS Y COMISIONES DE LA OFICINA DE PRESIDENCIA</h3>
+    </div>
+</header>
+<section class="">
+    <div class="container  " style="max-width: 90%;">
+      <div class="row d-flex align-items-center justify-content-center ">
+        <div class="col-md-8 col-lg-7 col-xl-6">
+          <img src="../../assets/img/logo_iecm.png" class="img-fluid" alt="Phone image">
+        </div>
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 border-start">
+          <form #login_Form = "ngForm" (ngSubmit) = "login()">
+            <!-- Email input -->
+            <div class="form-outline mb-4 text-center">
+                <!-- <label class="form-label " style="font-size:20px" for="form1Example13">Usuario:</label> -->
+                <input type="email" name="usuario" #usuario = "ngModel" [(ngModel)] = "loginForm.usuario" class="form-control form-control-lg" placeholder="Usuario" required/>
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-4 text-center">
+                <!-- <label class="form-label" style="font-size:20px" for="form1Example23">Contraseña: </label> -->
+                <input type="password" name="contrasena" #contrasena = "ngModel" [(ngModel)] = "loginForm.contrasena" class="form-control form-control-lg" placeholder="Contraseña" required/>
+            </div>
+  
+           
+            <!-- <div class="g-recaptcha" data-sitekey="6Lda02seAAAAAAr6DbP9pLD8CY0KCP77jmyGQyiO"></div> -->
+                <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="loginForm.token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+                <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+                    <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
+                </div>
+            <br>
+
+            <!-- Submit button -->
+            <div class="row justify-content-center">
+                <button type="submit"  class="col-sm-8 btn btn-primary btn-lg btn-block" [disabled] ="!login_Form.form.valid">Ingresar </button>
+            </div>
+
+           
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
+
