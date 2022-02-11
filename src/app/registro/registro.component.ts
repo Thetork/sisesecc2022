@@ -19,6 +19,7 @@ export class RegistroComponent implements OnInit {
 
   logout(){
     this.router.navigate(['/login']);
+    
   }
   registrarSesion(){
     Swal.fire({
@@ -28,9 +29,12 @@ export class RegistroComponent implements OnInit {
       confirmButtonText: 'Continuar',
       allowOutsideClick: false
     }).then((result) => {
-      this.router.navigate(['./home']);
+      this.router.navigate(['./orden_dia']);
 
     })
   }
+
+  
+  
 
 }

@@ -10,6 +10,8 @@ import { RegistroComponent } from "./registro/registro.component";
 import { LoginComponent } from "./login/login.component";
 import { AppComponent } from "./app.component";
 import { AltaComisionComponent } from "./alta-comision/alta-comision.component";
+import { SeguimientoComponent } from "./seguimiento/seguimiento.component";
+import { OrdenDiaComponent } from "./orden-dia/orden-dia.component";
 
 
 const appRoutes: Routes = [
@@ -20,6 +22,8 @@ const appRoutes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'home', component: HomeComponent},
     {path: 'alta_comision', component: AltaComisionComponent},
+    {path: 'seguimiento', component: SeguimientoComponent},
+    {path: 'orden_dia', component: OrdenDiaComponent},
     {path: '**', component: LoginComponent}
 ];
 

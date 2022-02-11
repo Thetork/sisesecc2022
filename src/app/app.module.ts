@@ -28,6 +28,9 @@ import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSet
 
 import { environment } from '../environments/environment';
 import { AltaComisionComponent } from './alta-comision/alta-comision.component';
+import { SeguimientoComponent } from './seguimiento/seguimiento.component';
+import { UsuarioLogComponent } from './include/usuario-log/usuario-log.component';
+import { OrdenDiaComponent } from './orden-dia/orden-dia.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,9 @@ import { AltaComisionComponent } from './alta-comision/alta-comision.component';
     FooterComponent,
     HeaderComponent,
     AltaComisionComponent,
+    SeguimientoComponent,
+    UsuarioLogComponent,
+    OrdenDiaComponent,
     
   ],
   imports: [

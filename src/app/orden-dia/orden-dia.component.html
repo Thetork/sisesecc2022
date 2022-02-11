@@ -1,0 +1,113 @@
+<app-header></app-header>
+<div class="container" style="min-height: 390px;">
+<app-usuario-log></app-usuario-log>
+    <div class="row text-center mt-3">
+        <h3> Registro del Orden del Día</h3>
+    </div>
+    <div class="row mt-3">
+        <form action="">
+            <div class="row form-group">
+                <label class="col-sm-3" for="">Nombre Comité o Comisión:</label>
+                <label class="col-sm-3" for="">Nombre Comité...</label>
+            </div>
+            <div class="row form-group">
+                <label class="col-sm-3" for="">Numero de sesión:</label>
+                <label class="col-sm-3" for="">2</label>
+            </div>
+            <div class="row form-group">
+                <label class="col-sm-3" for="">Tipo de Sesión:</label>
+                <label class="col-sm-3" for="">Ordinaria...</label>
+            </div>
+            <div class="row form-group">
+                <label class="col-sm-3" for="">Fecha de la Sesión:</label>
+                <label class="col-sm-3" for="">22/02/2022...</label>
+            </div>
+            <div class="row form-group">
+                <label class="col-sm-3" for="">Hora de la Sesión:</label>
+                <label class="col-sm-3" for="">10:00 a.m.</label>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <fieldset class="border p-2" >
+            <legend  class="float-none w-auto p-2">Orden del Día</legend>
+            <div class="row  justify-content-center">
+                <div class="row col-sm-8 form-group">
+                    <label class="col-sm-3" for="">Número de Punto de Orden del Día:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" type="text" name="" id="">
+                    </div>
+                </div>
+                <div class="row col-sm-8 d-flex align-items-center form-group">
+                    <label class="col-sm-3 text-center" for="">Punto del Orden del Día:</label>
+                    <div class="col-sm-9">
+                        <textarea class="form-control" type="text" name="" id=""></textarea>
+                    </div>
+                </div>
+                <div class="row col-sm-8 mt-3 d-flex align-items-center form-group">
+                    <label class="col-sm-3 text-center" for="">Observaciones:</label>
+                    <div class="col-sm-9">
+                        <textarea class="form-control" type="text" name="" id=""></textarea>
+                    </div>
+                </div>
+                <div class="row col-sm-8 mt-3 d-flex align-items-center form-group">
+                    <label class="col-sm-3 text-center" for="">Sentido de la votación:</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" type="text" name="" id="">
+                            <option value=""selected>Selecciona una opción...</option>
+                            <option value="1">Unanimidad</option>
+                            <option value="2">Mayoría</option>
+                            <option value="3">No aprobado</option>
+                            <option value="4">Recibido</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row col-sm-8 mt-3  form-group">
+                    <label class="col-sm-3" for="">Anexar documento:</label>
+                    <label class="col-sm-3 text-center" for="" (click)="fileSelect.click()">Documento <i class="far fa-file" style="font-size: 20px;"></i></label>
+                    <input class="form-control" style="display: none" #fileSelect id="multi_file" type="file" multiple = "multiple" placeholder="Numero...">
+                </div>
+                <div class="row col-sm-8 mt-3 justify-content-center form-group">
+                    <button class="col-sm-2 btn btn-success">Guardar</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </div>
+    <div class="row">
+        <fieldset class="border p-2">
+            <legend  class="float-none w-auto p-2">Puntos del Orden del Día Registrados</legend>
+            <p-table [value]="orden_dia">
+        
+              <ng-template pTemplate="header">
+                  <tr class="text-center">
+                    <th>No.</th>
+                    <th>Punto del Orden del Día</th>
+                    <th>Observaciones</th>
+                    <th>Sentido de la votación</th>
+                    <th>Documento</th>
+                    <th>Obtener Cédula</th>
+                    <th>Adjuntar Cédula</th>
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-orden_dia>
+                  <tr class="text-center">
+                        <td class="text-center">{{orden_dia.Id}}</td>
+                        <td class="text-center">{{orden_dia.orden}}</td>
+                        <td class="text-center">{{orden_dia.observaciones}}</td>
+                        <td class="text-center">{{orden_dia.votacion}}</td>
+                        <td class="text-center">{{orden_dia.documento}}</td>
+                        <td class="text-center">{{orden_dia.cedula}}</td>
+                        <td class="text-center">{{orden_dia.add_cedula}}</td>
+    
+                  </tr>
+              </ng-template>
+            </p-table>
+        </fieldset>
+    </div>
+    <div class="row mt-3 justify-content-end">
+        <button class="col-sm-2 btn btn-primary">Regresar</button>
+    </div>
+    
+</div>
+<app-footer></app-footer>

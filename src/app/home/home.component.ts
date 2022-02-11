@@ -14,7 +14,10 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   public id_usuario: any; 
-  public users: any;
+  public user: any[] = [
+      { nombre: 'Comité...', numero: '2', tipo:'Ordinaria', fecha: '22/03/2022', hora: '10:00 a.m.', seguimiento: 'Ver detalle...' },
+
+  ];
   public cols:any;
   public perfil: any;
 
@@ -23,6 +26,7 @@ export class HomeComponent implements OnInit {
     ) {
      
      this.id_usuario = window.sessionStorage.getItem('usuario');
+     
    }
   
   ngOnInit(): void {
@@ -31,10 +35,7 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['./login']);
     }
 
-    this.users = [
-      { nombre: 'Comité...', numero: '2', tipo:'Ordinaria', fecha: '22/03/2022', hora: '10:00 a.m.', seguimiento: 'Ver detalle...' },
-
-  ];
+    
   
   }
   

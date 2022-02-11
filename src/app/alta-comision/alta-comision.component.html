@@ -1,16 +1,11 @@
 <app-header></app-header>
-<div class="container" style="min-height: 400px;">
-    <div class="row">
-        <div class="row justify-content-between m-1">
-            <p class="col-sm-4">USUARIO: {{usuario}}</p>
-            <button  class="col-sm-2 btn btn-primary" (click)="logout()">Cerrar Sesión</button>
-        </div>
-    </div>
+<div class="container" style="min-height: 350px;">
+    <app-usuario-log></app-usuario-log>
     <div class="row text-center mt-3">
         <h3> Alta de Comité o Comisión Vigente</h3>
     </div>
     <div class="row">
-        <form action="">
+        <form >
             <div class="row mt-3 justify-content-center form-group">
                 <label class="col-sm-3 text-justify" for="">Nombre del Comité o Comisión:</label>
                 <div class="col-sm-4">
@@ -26,21 +21,19 @@
             <div class="row mt-3 justify-content-center form-group">
                 <label class="col-sm-3 text-justify" for="">Asesora o Asesor a cargo:</label>
                 <div class="col-sm-4">
-                    <input class="form-control" type="text" placeholder="Asesor/Asesora...">
+                    <select class="form-control" name="" id="">
+                        <option value=""selected>Selecciona una opción...</option>
+                        <option value="">Jesus Daniel Valenzuela Zazueta</option>
+                    </select>
                 </div>
             </div>
             <div class="row mt-3 justify-content-center form-group">
-                <label class="col-sm-3 text-justify" for="">Persona Consejera que lo preside:</label>
+                <label class="col-sm-3 text-justify" for="">Integrantes:</label>
                 <div class="col-sm-4">
-                    <input class="form-control" type="text" placeholder="Consejero/Consejera...">
+                    <input class="form-control" type="text" placeholder="Integrantes...">
                 </div>
             </div>
-            <div class="row mt-3 justify-content-center form-group">
-                <label class="col-sm-3 text-justify" for="">Secretaria Técnica o Secretario Técnico del Comité o Comisión:</label>
-                <div class="col-sm-4">
-                    <input class="form-control" type="text" placeholder="Secretario/Secretaria...">
-                </div>
-            </div>
+            
             <div class="row mt-3 justify-content-end">
                 <button class=" col-sm-1 btn btn-primary me-5" (click)="guardarComision()">Guardar</button>
                 <button class=" col-sm-1 btn btn-primary" (click)="router.navigate(['/alta']);">Regresar</button>

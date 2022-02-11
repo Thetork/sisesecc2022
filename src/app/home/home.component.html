@@ -2,10 +2,8 @@
 
 
 <div class="container " style="min-height: 500px;">
-    <div class="row justify-content-between m-1">
-        <p class="col-sm-4">USUARIO: {{id_usuario}}</p>
-        <button  class="col-sm-2 btn btn-primary" (click)="logout()">Cerrar Sesión</button>
-    </div>
+    <app-usuario-log></app-usuario-log>
+
     <div class="row p-3">
         <nav class="nav">
             <button class=" btn btn-primary blanco" [routerLink] = "['/alta']" [routerLinkActive] = "[ 'active' ]">Alta de Comité o <br>Comisión</button>&nbsp;
@@ -51,10 +49,8 @@
                 </table>
             </div>
             <br> -->
-         <p-table [value]="users">
-            <ng-template pTemplate="caption">
-                Users List
-                  </ng-template>
+         <p-table [value]="user">
+            
           <ng-template pTemplate="header">
               <tr>
                 <th>Nombre de comité o comisión</th>
@@ -72,7 +68,7 @@
                   <td>{{user.tipo}}</td>
                   <td>{{user.fecha}}</td>
                   <td>{{user.hora}}</td>
-                  <td>{{user.seguimiento}}</td>
+                  <td><a [routerLink] = "['/seguimiento']">Ver detalle</a></td>
 
               </tr>
           </ng-template>

@@ -1,9 +1,6 @@
 <app-header></app-header>
 <div class="container">
-    <div class="row justify-content-between m-1">
-        <p class="col-sm-2">USUARIO: {{id_usuario}}</p>
-        <button  class="col-sm-2 btn btn-primary" (click)="logout()">Cerrar Sesión</button>
-    </div>
+  <app-usuario-log></app-usuario-log>
     <div class="row text-center">
         <h3> Alta de Comité o Comisión Vigente</h3>
     </div>
@@ -15,12 +12,11 @@
         
       <ng-template pTemplate="header">
           <tr >
-              <th class="text-center"> No.</th>
-              <th class="text-center">Nombre del <br>Comité o Comisión</th>
-              <th class="text-center">Acrónimo</th>
-              <th class="text-center">Asesora o Asesor<br> a cargo</th>
-              <th class="text-center">Persona Consejera<br> que lo preside</th>
-              <th class="text-center">Secretaria Técnica o<br> Secretario Técnico </th>
+                <th class="text-center"> No.</th>
+                <th class="text-center">Nombre del <br>Comité o Comisión</th>
+                <th class="text-center">Acrónimo</th>
+                <th class="text-center">Asesora o Asesor<br> a cargo</th>
+                <th class="text-center">Integrantes</th>
           </tr>
       </ng-template>
       <ng-template pTemplate="body" let-comites>
@@ -29,8 +25,7 @@
               <td class="text-center">{{comites.nombre}}</td>
               <td class="text-center">{{comites.acronimo}}</td>
               <td class="text-center">{{comites.asesor}}</td>
-              <td class="text-center">{{comites.preside}}</td>
-              <td class="text-center">{{comites.secretario}}</td>
+              <td class="text-center">{{comites.integrantes}}</td>
 
           </tr>
       </ng-template>
